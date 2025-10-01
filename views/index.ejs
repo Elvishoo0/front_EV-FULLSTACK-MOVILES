@@ -1,9 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="/styles.css" />
-</head>
-<body>
-    <h1>Hello world</h1>
-</body>
-</html>
+<%- include('partials/header') -%>
+
+  <section id="hero">
+    <div class="youtube-background">
+      <iframe src="https://www.youtube.com/embed/48-1X9WxMvU?autoplay=1&mute=1&loop=1&playlist=48-1X9WxMvU&controls=0&showinfo=0&autohide=1&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <!-- hero-container sin AOS y con clases para estar arriba -->
+    <div class="hero-container on-top">
+      <h1 class="text-super-top">Del Campo a tu Hogar</h1>
+      <h2 class="text-super-top">Productos frescos, vida sana. Las mejores frutas y verduras, seleccionadas para ti.</h2>
+      <a href="#mision" class="btn-get-started scrollto text-super-top"><i class="bx bx-chevrons-down"></i></a>
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="mision" class="about">
+      <div class="container on-top">
+        <div class="row no-gutters">
+          <div class="content col-xl-5 d-flex align-items-stretch">
+            <div class="content-box on-top">
+              <h3 class="text-super-top">Nuestra Misión</h3>
+              <p class="text-super-top">
+                Proporcionar productos frescos y de calidad directamente desde el campo hasta la puerta de nuestros clientes, garantizando la frescura y el sabor en cada entrega. Nos comprometemos a fomentar una conexión más cercana entre los consumidores y los agricultores locales.
+              </p>
+              <a href="#vision" class="about-btn text-super-top">Nuestra Visión <i class="bx bx-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision" class="cta">
+      <div class="container on-top">
+        <div class="row no-gutters">
+          <div class="content col-xl-5 d-flex align-items-stretch ms-auto">
+            <div class="content-box on-top">
+              <h3 class="text-super-top">Nuestra Visión</h3>
+              <p class="text-super-top">
+                Ser la tienda online líder en la distribución de productos frescos y naturales en Chile, reconocida por nuestra calidad excepcional y servicio al cliente. Aspiramos a expandir nuestra presencia, estableciendo un nuevo estándar en la distribución de productos agrícolas.
+              </p>
+              <a href="#locations" class="cta-btn text-super-top">Puntos de Distribución <i class="bx bx-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="locations" class="contact section-bg">
+      <div class="container on-top">
+        <div class="section-title">
+          <h2 class="text-super-top">Puntos de Distribución</h2>
+          <p class="text-super-top">Operamos en más de 9 puntos a lo largo del país, incluyendo ciudades como Santiago, Puerto Montt, Villarica, Nacimiento, Viña del Mar, Valparaíso, y Concepción.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<%- include('partials/footer') -%>
