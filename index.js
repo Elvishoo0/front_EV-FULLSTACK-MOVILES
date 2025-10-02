@@ -1,20 +1,17 @@
-const express = require('express');
-const path = require('path')
+const express = require("express");
+const path = require("path");
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
-const port = parseInt(process.env.PORT) || process.argv[3] || 8080;
+// Servir archivos estáticos de React
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.static(path.join(__dirname, 'public')))
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Para rutas de React Router
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.get('/api', (req, res) => {
-  res.json({"msg": "Hello world"});
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
-
-app.listen(port, () => {
-  console.log(`Listening on http://localhost:${port}`);
-})
