@@ -1,5 +1,17 @@
 import React from "react";
+import Header from "./components/Header";
+import HeroMain from "./components/HeroMain";
+import Footer from "./components/Footer";
 
-export default function App() {
-  return <h1>Hola desde React 🚀</h1>;
+function App() {
+  return (
+    <>
+      <Header />
+      <HeroMain />
+      <Footer />
+    </>
+  );
 }
+
+export default App;
+
