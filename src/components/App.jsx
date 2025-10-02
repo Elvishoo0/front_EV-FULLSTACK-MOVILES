@@ -1,7 +1,8 @@
 import React from "react";
-import Header from "./components/Header";
-import HeroMain from "./components/HeroMain";
-import Footer from "./components/Footer";
+import Header from "./Header";
+import HeroMain from "./HeroMain";
+import Footer from "./Footer";
+
 
 function App() {
   return (
@@ -14,4 +15,3 @@ function App() {
 }
 
 export default App;
-
