@@ -43,6 +43,8 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo h1 a {
   color: #fff;
   font-size: 24px;
+  margin: 0;
+  padding: 0;
 }
 
 /* Menú de navegación */
@@ -50,8 +52,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;                 /* Aplica flexbox en la lista de navegación */
   gap: 28px;                     /* Espacio entre los enlaces */
   list-style: none;              /* Elimina los puntos por defecto */
-  margin: 0;
-  padding: 0;
+  margin: 25;
+  padding: 25;
 }
 
 #navbar li {
