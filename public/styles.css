@@ -6,8 +6,10 @@ body {
   color: #333; 
   background-color: #F7F7F7; 
 }
+
 a { text-decoration: none; color: #2E8B57; }
 a:hover { color: #256d45; }
+
 h1, h2, h3, h4, h5, h6 { 
   font-family: 'Playfair Display', serif; 
   color: #8B4513; 
@@ -20,11 +22,23 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s; 
   z-index: 997; 
   padding: 24px 0; 
-  background: rgba(0, 0, 0, 0.3); 
+  background: rgba(0, 0, 0, 0.85); /* Opacidad fija al 85% */
   backdrop-filter: saturate(1.2) blur(2px);
 }
-#header.header-scrolled { background: #000; padding: 12px 0; }
-#header .logo h1 a { color: #fff; }
+
+#header .logo h1 a { 
+  color: #fff;
+  opacity: 0.85; /* Opacidad fija */
+  transition: opacity 0.3s ease;
+}
+
+.navbar {
+  display: flex; /* Para alinear el logo y la navegación en una sola línea */
+  justify-content: space-between; /* Espacio entre el logo y los links de navegación */
+  align-items: center; /* Alinear el logo y la barra de navegación verticalmente */
+  width: 100%;
+}
+
 .navbar a { 
   font-family: 'Montserrat', sans-serif; 
   font-size: 16px; 
@@ -32,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff; 
   padding: 10px 0 10px 30px; 
 }
+
 .navbar a:hover, .navbar .active { color: #ddd; }
 
 /*--------------------------------------------------------------
@@ -45,8 +60,9 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; /* Asegura que el texto se centre horizontalmente */
+  text-align: center;
 }
+
 #hero .youtube-background { 
   position: absolute; 
   top: 0; left: 0; 
@@ -54,6 +70,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1; 
   pointer-events: none; 
 }
+
 #hero .youtube-background iframe { 
   position: absolute; 
   top: 50%; left: 50%; 
@@ -62,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 177.77vh; 
   transform: translate(-50%, -50%); 
 }
+
 #hero:before { 
   content: ""; 
   background: rgba(0, 0, 0, 0.55); 
@@ -69,53 +87,29 @@ h1, h2, h3, h4, h5, h6 {
   inset: 0; 
   z-index: 2; 
 }
+
 #hero .hero-container { 
   position: relative; 
   z-index: 3; 
   color: #fff; 
 }
-#hero h1 { 
-  margin: 0 0 20px 0; 
-  font-size: 80px; 
-  color: #fff; 
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-}
-#hero h2 { 
-  margin-bottom: 80px; 
-  font-size: 20px; 
-  font-family: 'Montserrat', sans-serif; 
-  color: #fff; 
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-}
-#hero .btn-get-started { 
-  font-size: 36px; 
-  color: #fff; 
-  border: 2px solid #fff; 
-  width: 64px; height: 64px; 
-  border-radius: 50%; 
-  transition: 0.3s; 
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center; 
-}
 
 /*--------------------------------------------------------------
 # Secciones de Contenido
 --------------------------------------------------------------*/
-#main { margin-top: -90px; }
 section { 
   position: relative; 
   padding: 80px 0; 
   background-color: #fff; 
   z-index: 5; 
-  display: flex; /* Hacemos uso de Flexbox */
-  justify-content: center; /* Centrado horizontal */
-  align-items: center; /* Centrado vertical */
-  text-align: center; /* Centrado de los textos */
-  min-height: 500px; /* Asegura que la sección tenga altura mínima */
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  min-height: 500px; 
 }
 
-/* Estilos para secciones específicas */
+/* Ajustes para mantener el diseño de las secciones */
 .about, .cta { 
   background-size: cover; 
   background-attachment: fixed; 
@@ -126,12 +120,15 @@ section {
   justify-content: center; 
   align-items: center;
 }
+
 .about { 
   background-image: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=2070'); 
 }
+
 .cta { 
   background-image: url('https://images.unsplash.com/photo-1543083477-4f785aeafaa9?auto=format&fit=crop&q=80&w=2070'); 
 }
+
 .about::before, .cta::before { 
   content: ""; 
   position: absolute; 
@@ -139,51 +136,11 @@ section {
   background: rgba(0, 0, 0, 0.6); 
   z-index: 0; 
 }
+
 .about .container, .cta .container { 
   position: relative; 
   z-index: 1; 
 }
-.content-box { 
-  position: relative; 
-  z-index: 2; 
-  background: rgba(255, 255, 255, 0.95); 
-  padding: 40px; 
-  border-radius: 8px; 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
-}
-.content-box h3 { 
-  color: #8B4513 !important; 
-  font-size: 34px; 
-}
-.content-box p { 
-  color: #333333 !important; 
-  margin-bottom: 30px; 
-}
-.content-box a.about-btn, 
-.content-box a.cta-btn { 
-  display: inline-block; 
-  background: #2E8B57; 
-  padding: 10px 20px; 
-  color: #fff !important; 
-  border-radius: 5px; 
-  transition: 0.3s; 
-  border: none; 
-  text-decoration: none; 
-}
-
-/*--------------------------------------------------------------
-# Utilidades de capas y accesibilidad visual
---------------------------------------------------------------*/
-.on-top { position: relative !important; z-index: 999 !important; }
-
-/* Si AOS no está cargado, mostrar igual los elementos */
-[data-aos] { 
-  opacity: 1 !important; 
-  transform: none !important; 
-}
-
-/* Mejor contraste sobre fondos complejos */
-.text-shadow-strong { text-shadow: 2px 2px 6px rgba(0,0,0,0.65); }
 
 /*--------------------------------------------------------------
 # Responsive
@@ -198,62 +155,3 @@ section {
   #hero h1 { font-size: 36px; }
   #hero h2 { font-size: 16px; }
 }
-
-/* Forzar que cualquier texto quede sobre todo */
-.text-super-top {
-  position: relative !important;
-  z-index: 999999 !important;  /* más alto que cualquier capa */
-  color: #fff !important;      /* asegura contraste */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.8) !important; /* mejora legibilidad */
-}
-
-/* Navbar horizontal en desktop */
-#header .navbar ul{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 28px;                 /* espacio entre links */
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#header .navbar li { display: inline-flex; }
-#header .navbar a { padding: 8px 0; }
-
-/* Alinearlo a la derecha del header */
-#header .navbar { margin-left: auto; }
-
-/* Móvil: que se apile (si usas el ícono hamburguesa) */
-@media (max-width: 991.98px){
-  #header .navbar ul{
-    flex-direction: column;
-    gap: 16px;
-  }
-}
-
-/* Fondo con imagen y velo para #locations */
-#locations{
-  position: relative;
-  background-image: url('https://images.unsplash.com/photo-1514517220038-7db3f39dfc2f?auto=format&fit=crop&q=80&w=2070');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* quítalo si no quieres parallax */
-  color: #fff;
-  padding: 120px 0;             /* más aire como las otras secciones */
-}
-
-#locations::before{
-  content:"";
-  position:absolute; inset:0;
-  background: rgba(0,0,0,.55);
-  z-index:0;
-}
-
-#locations .container{
-  position: relative;
-  z-index:1;                    /* texto por encima del velo */
-}
-
-#locations .section-title h2{ color:#fff; }
-#locations .section-title p{ color:#f3f3f3; }
