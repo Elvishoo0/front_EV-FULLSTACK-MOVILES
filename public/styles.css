@@ -13,6 +13,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: var(--text-color);
   background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
 a {
@@ -27,6 +31,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
   color: #8B4513;
+  margin: 0;
 }
 
 #header {
@@ -39,6 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 24px 0;
   background: var(--navbar-gradient-start); /* Color sólido por defecto */
   backdrop-filter: saturate(1.2) blur(2px);
+  width: 100%;
 }
 
 #header.header-scrolled {
@@ -107,7 +113,11 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   text-align: center;
   height: 100%;
+  width: 100%;
   color: var(--white);
+  max-width: 1200px; /* Limitar el ancho máximo */
+  margin: 0 auto; /* Centrado */
+  padding: 0 20px;
 }
 
 #hero h1 {
@@ -145,6 +155,9 @@ section {
   background-color: #fff;
   z-index: 5;
   text-align: justify; /* Justificar el texto */
+  max-width: 1200px; /* Limitar el ancho máximo */
+  margin: 0 auto; /* Centrado */
+  padding: 80px 20px; /* Más padding en los laterales */
 }
 
 .about, .cta {
@@ -153,6 +166,8 @@ section {
   padding: 120px 0;
   position: relative;
   overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about {
@@ -216,6 +231,7 @@ section {
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
 }
 
 #header .navbar li { display: inline-flex; }
@@ -243,6 +259,8 @@ section {
   background-attachment: fixed; /* quítalo si no quieres parallax */
   color: var(--white);
   padding: 120px 0; /* más aire como las otras secciones */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 #locations::before {
