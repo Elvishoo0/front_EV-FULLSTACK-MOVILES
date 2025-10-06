@@ -5,6 +5,7 @@ body {
   font-family: 'Montserrat', sans-serif; 
   color: #333; 
   background-color: #F7F7F7; 
+  text-align: center;
 }
 
 a { 
@@ -26,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 #header {
   display: flex;                   /* Flexbox para alinear logo y navegación horizontalmente */
   justify-content: space-between;  /* Alinea el logo a la izquierda y la navegación a la derecha */
-  align-items: center;             /* Alinea verticalmente los elementos al centro */
+  align-items: baseline;             /* Alinea verticalmente los elementos al centro */
   position: fixed;
   top: 0;
   left: 0;
