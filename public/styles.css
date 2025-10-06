@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   z-index: 997;
   padding: 24px 0;
-  background: rgba(0, 0, 0, 0.85); /* Fondo semi-transparente por defecto */
+  background: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente por defecto */
   backdrop-filter: saturate(1.2) blur(2px);
   transition: all 0.5s; /* Transición suave */
 }
