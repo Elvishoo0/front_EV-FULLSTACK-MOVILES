@@ -25,18 +25,15 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  display: flex;                   /* Flexbox para alinear logo y navegación horizontalmente */
-  justify-content: space-between;  /* Alinea el logo a la izquierda y la navegación a la derecha */
-  align-items: baseline;             /* Alinea verticalmente los elementos al centro */
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 997;
   padding: 24px 0;
-  background: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente por defecto */
+  background: rgba(0, 0, 0, 0.85); /* Fondo semi-transparente oscuro */
   backdrop-filter: saturate(1.2) blur(2px);
-  transition: all 0.5s; /* Transición suave */
+  transition: all 0.5s;
 }
 
 /* Para el logo */
@@ -52,8 +49,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;                 /* Aplica flexbox en la lista de navegación */
   gap: 28px;                     /* Espacio entre los enlaces */
   list-style: none;              /* Elimina los puntos por defecto */
-  margin: 25;
-  padding: 25;
+  margin: 0;
+  padding: 0;
 }
 
 #navbar li {
