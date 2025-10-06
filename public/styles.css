@@ -45,7 +45,6 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--navbar-gradient-start); /* Color sólido por defecto */
   backdrop-filter: saturate(1.2) blur(2px);
   width: 100%;
-  box-sizing: border-box;
 }
 
 #header.header-scrolled {
@@ -57,26 +56,18 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--white);
 }
 
-.navbar {
-  display: flex;
-  justify-content: flex-end; /* Alineación a la derecha */
-  gap: 28px;
-  width: 100%;
-}
-
 .navbar a {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: var(--white);
-  padding: 10px 30px;
+  padding: 10px 0 10px 30px;
 }
 
 .navbar a:hover, .navbar .active {
   color: #ddd;
 }
 
-/* Sección Hero */
 #hero {
   width: 100%;
   height: 100vh;
@@ -122,10 +113,11 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   text-align: center;
   height: 100%;
-  color: var(--white);
   width: 100%;
-  max-width: 1200px;
+  color: var(--white);
+  max-width: 1200px; /* Limitar el ancho máximo */
   margin: 0 auto; /* Centrado */
+  padding: 0 20px;
 }
 
 #hero h1 {
@@ -159,22 +151,23 @@ h1, h2, h3, h4, h5, h6 {
 /* Ajustes para el texto justificado */
 section {
   position: relative;
-  padding: 80px 20px; /* Mejor uso de los espacios laterales */
+  padding: 80px 0;
   background-color: #fff;
   z-index: 5;
   text-align: justify; /* Justificar el texto */
   max-width: 1200px; /* Limitar el ancho máximo */
   margin: 0 auto; /* Centrado */
+  padding: 80px 20px; /* Más padding en los laterales */
 }
 
 .about, .cta {
   background-size: cover;
   background-attachment: fixed;
-  padding: 120px 20px;
+  padding: 120px 0;
   position: relative;
   overflow: hidden;
   max-width: 1200px;
-  margin: 0 auto; /* Centrado */
+  margin: 0 auto;
 }
 
 .about {
@@ -242,10 +235,19 @@ section {
 }
 
 #header .navbar li { display: inline-flex; }
+#header .navbar a { padding: 8px 0; }
 
 /* Alinearlo a la derecha del header */
 #header .navbar {
   margin-left: auto;
+}
+
+/* Móvil: que se apile (si usas el ícono hamburguesa) */
+@media (max-width: 991.98px) {
+  #header .navbar ul {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 
 /* Fondo con imagen y velo para #locations */
@@ -256,7 +258,7 @@ section {
   background-position: center;
   background-attachment: fixed; /* quítalo si no quieres parallax */
   color: var(--white);
-  padding: 120px 20px;
+  padding: 120px 0; /* más aire como las otras secciones */
   max-width: 1200px;
   margin: 0 auto;
 }
