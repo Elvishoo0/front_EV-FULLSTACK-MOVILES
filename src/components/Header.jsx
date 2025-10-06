@@ -1,10 +1,10 @@
 import React from 'react';
 
-
 export default function Header() {
   return (
     <header id="header" className="fixed-top header-transparent">
       <div className="container d-flex align-items-center justify-content-between">
+        {/* Logo */}
         <div className="logo">
           <h1 className="text-light">
             <a href="index.html">
@@ -13,6 +13,7 @@ export default function Header() {
           </h1>
         </div>
 
+        {/* Navegación */}
         <nav id="navbar" className="navbar">
           <ul>
             <li>
