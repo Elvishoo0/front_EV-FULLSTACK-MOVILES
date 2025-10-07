@@ -1,5 +1,6 @@
+
 /*--------------------------------------------------------------
-# General y Header
+# General
 --------------------------------------------------------------*/
 body { 
   font-family: 'Montserrat', sans-serif; 
@@ -12,85 +13,95 @@ a {
   text-decoration: none; 
   color: #2E8B57; 
 }
+
 a:hover { 
   color: #256d45; 
 }
 
 h1, h2, h3, h4, h5, h6 { 
-  font-family: 'Playfair Display', serif; 
+  font-family: 'Playfair Display', serif; G
   color: #8B4513; 
 }
 
 /*--------------------------------------------------------------
-# Header
+# Header Reconstruido
 --------------------------------------------------------------*/
 #header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 997;
-  padding: 24px 0;
-  background: rgba(0, 0, 0, 0.85); /* Fondo semi-transparente oscuro */
-  backdrop-filter: saturate(1.2) blur(2px);
-  transition: all 0.5s;
+  z-index: 1000;
+  background: transparent; /* Inicia transparente */
+  padding: 10px 0;
+  transition: all 0.4s ease-in-out;
 }
 
-/* Para el logo */
-#header .logo h1 a {
+#header.header-scrolled {
+  background: rgba(15, 15, 15, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 5px 0;
+}
+
+#header.header-hidden {
+  top: -150px; /* Oculta el header moviéndolo hacia arriba */
+}
+
+/* CLAVE: Forzar el layout de columna para el contenedor principal del header */
+#header .container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Contenedor del logo para darle espacio */
+#header .logo-container {
+  padding-bottom: 8px;
+}
+
+#header .logo a {
   color: #fff;
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
+  font-size: 28px;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* Menú de navegación */
+/* Barra de navegación */
 #navbar {
-  margin-left: auto; /* Empuja la navegación a la derecha */
+  width: 100%;
 }
 
 #navbar ul {
-  display: flex;                 /* Aplica flexbox en la lista de navegación */
-  gap: 28px;                     /* Espacio entre los enlaces */
-  list-style: none;              /* Elimina los puntos por defecto */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
-}
-
-#navbar li {
-  display: inline-flex;
+  list-style: none;
+  gap: 30px;
 }
 
 #navbar a {
+  color: rgba(255, 255, 255, 0.85);
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+}
+
+#navbar a:hover, #navbar .active {
   color: #fff;
-  padding: 10px 20px;
+  border-bottom-color: rgba(255, 255, 255, 0.7);
 }
 
-#navbar a:hover,
-#navbar .active {
-  color: #ddd;
-}
-
-/* Para el ícono de hamburguesa en móvil */
+/* Ocultar el botón de menú móvil por ahora */
 .mobile-nav-toggle {
-  display: none; /* Desactiva el icono de hamburguesa por defecto */
+  display: none;
 }
-
-@media (max-width: 991.98px) {
-  /* En pantallas pequeñas (móviles), apilamos los enlaces en columna */
-  #navbar ul {
-      flex-direction: column;
-      gap: 16px;
-  }
-
-  .mobile-nav-toggle {
-      display: block; /* Muestra el icono de hamburguesa en pantallas pequeñas */
-  }
-}
-
 /*--------------------------------------------------------------
 # Hero Section (Video)
 --------------------------------------------------------------*/
@@ -111,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .youtube-background iframe { 
   position: absolute; 
-  top: 50%; left: 50%; 
+  top: 50%; left: 50%; G
   width: 100vw; height: 56.25vw; 
   min-height: 100vh; 
   min-width: 177.77vh; 
@@ -186,7 +197,7 @@ section {
 }
 
 .about { 
-  background-image: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=2070'); 
+  background-image: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=2070'); G
 }
 
 .cta { 
@@ -241,7 +252,7 @@ section {
 # Utilidades de capas y accesibilidad visual
 --------------------------------------------------------------*/
 .on-top { 
-  position: relative !important; 
+  position: relative !important; G
   z-index: 999 !important; 
 }
 
@@ -253,7 +264,7 @@ section {
 
 /* Mejor contraste sobre fondos complejos */
 .text-shadow-strong { 
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.65); 
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.65); G
 }
 
 /*--------------------------------------------------------------
@@ -282,30 +293,6 @@ section {
   #hero h2 { 
       font-size: 16px; 
   }
-}
-
-/* Navbar horizontal en desktop */
-#header .navbar ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 28px;                 /* Espacio entre links */
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#header .navbar li { 
-  display: inline-flex; 
-}
-
-#header .navbar a { 
-  padding: 8px 0; 
-}
-
-/* Alinearlo a la derecha del header */
-#header .navbar { 
-  margin-left: auto; 
 }
 
 /* Fondo con imagen y velo para #locations */
