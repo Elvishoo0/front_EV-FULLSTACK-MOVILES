@@ -3,7 +3,7 @@ import React from 'react';
 export default function Header() {
   return (
     <header id="header" className="fixed-top header-transparent">
-      <div className="container d-flex align-items-center justify-content-between">
+      <div className="container d-flex align-items-center">
         {/* Logo */}
         <div className="logo">
           <h1 className="text-light m-0">

@@ -45,6 +45,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Menú de navegación */
+#navbar {
+  margin-left: auto; /* Empuja la navegación a la derecha */
+}
+
 #navbar ul {
   display: flex;                 /* Aplica flexbox en la lista de navegación */
   gap: 28px;                     /* Espacio entre los enlaces */
