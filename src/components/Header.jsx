@@ -5,42 +5,48 @@ const Header = () => {
   const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Scroll handler to manage header state (visibility and background)
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
-    // Handle header background change
-    if (currentScrollY > 50) {
-      setScrolled(true);
+
+    // Add background when scrolled past a certain point
+    setScrolled(currentScrollY > 50);
+
+    // Determine scroll direction to hide/show header
+    if (currentScrollY > lastScrollY && currentScrollY > 150) {
+      setHidden(true); // Scrolling down
     } else {
-      setScrolled(false);
+      setHidden(false); // Scrolling up
     }
 
-    // Handle header visibility
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      // Scrolling down
-      setHidden(true);
-    } else {
-      // Scrolling up
-      setHidden(false);
-    }
     setLastScrollY(currentScrollY);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [lastScrollY]);
 
+  // Dynamically build the class string for the header
+  const headerClasses = `fixed-top ${scrolled ? 'header-scrolled' : ''} ${hidden ? 'header-hidden' : ''}`;
+
   return (
-    <header id="header" className={`fixed-top ${scrolled ? 'header-scrolled' : ''} ${hidden ? 'header-hidden' : ''}`}>
-      <div className="container">
-        {/* Logo centered */}
-        <div className="logo-container">
+    // The main header element with dynamic classes for scroll effects
+    <header id="header" className={headerClasses}>
+      {/* 
+        The container div is now the flex container responsible for layout.
+        We've REMOVED the conflicting 'justify-content-between' class.
+      */}
+      <div className="container header-container">
+        
+        {/* Logo is now wrapped for better control */}
+        <div className="logo-wrapper">
           <h1 className="logo"><a href="index.html">HuertoHogar</a></h1>
         </div>
         
-        {/* Navbar centered below logo */}
+        {/* Navbar remains, to be stacked below the logo via CSS */}
         <nav id="navbar" className="navbar">
           <ul>
             <li><a className="nav-link scrollto active" href="#hero">Inicio</a></li>
@@ -50,6 +56,7 @@ const Header = () => {
             <li><a className="nav-link scrollto" href="#tienda">Tienda</a></li>
           </ul>
         </nav>
+
       </div>
     </header>
   );
