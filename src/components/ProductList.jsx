@@ -36,7 +36,7 @@ const ProductList = () => {
   return (
     <section id="productos" className="container" style={{ paddingTop: '80px', paddingBottom: '80px' }}>
        <div style={{ marginBottom: '40px' }}>
-         <h2 style={{ fontFamily: '\'Playfair Display\', serif', color: '#8B4513', fontSize: '34px' }}>Nuestros Productos</h2>
+         <h2 style={{ fontFamily: "'Playfair Display', serif", color: '#8B4513', fontSize: '34px' }}>Nuestros Productos</h2>
          <p>Productos frescos y orgánicos, directamente de nuestra granja a tu mesa.</p>
        </div>
        <div style={{
@@ -55,9 +55,9 @@ const ProductList = () => {
             justifyContent: 'space-between'
           }}>
             <div>
-              <h3 style={{ fontFamily: '\'Playfair Display\', serif', color: '#8B4513', marginBottom: '10px' }}>{product.name}</h3>
-              <p style={{ color: '#333', marginBottom: '15px' }}>{product.description}</p>
-              <p style={{ fontWeight: 'bold', color: '#2E8B57', fontSize: '1.2rem' }}>${product.price.toFixed(2)}</p>
+              <h3 style={{ fontFamily: "'Playfair Display', serif", color: '#8B4513', marginBottom: '10px' }}>{product.nombre}</h3>
+              <p style={{ color: '#333', marginBottom: '15px' }}>{product.descripcion}</p>
+              <p style={{ fontWeight: 'bold', color: '#2E8B57', fontSize: '1.2rem' }}>${product.precio.toFixed(2)}</p>
             </div>
             <button 
               onClick={() => addToCart(product)}
