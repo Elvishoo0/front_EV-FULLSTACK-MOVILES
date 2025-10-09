@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,17 +45,19 @@ const Header = () => {
         
         {/* Logo is now wrapped for better control */}
         <div className="logo-wrapper">
-          <h1 className="logo"><a href="index.html">HuertoHogar</a></h1>
+          <h1 className="logo"><Link to="/">HuertoHogar</Link></h1>
         </div>
         
         {/* Navbar remains, to be stacked below the logo via CSS */}
         <nav id="navbar" className="navbar">
           <ul>
-            <li><a className="nav-link scrollto active" href="#hero">Inicio</a></li>
+            <li><Link className="nav-link scrollto active" to="/">Inicio</Link></li>
             <li><a className="nav-link scrollto" href="#mision">Nuestra Misión</a></li>
             <li><a className="nav-link scrollto" href="#vision">Nuestra Visión</a></li>
             <li><a className="nav-link scrollto" href="#distribucion">Distribución</a></li>
             <li><a className="nav-link scrollto" href="#tienda">Tienda</a></li>
+            <li><Link className="nav-link" to="/cart">Carrito</Link></li>
+            <li><Link className="nav-link" to="/login">Login</Link></li>
           </ul>
         </nav>
 
