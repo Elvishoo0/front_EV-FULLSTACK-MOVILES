@@ -1,20 +1,23 @@
+
 const path = require('path');
+const webpack = require('webpack'); // Importamos webpack
+require('dotenv').config(); // Cargamos las variables de entorno del archivo .env
 
 module.exports = {
-  // Entry point for your React application
+  // Punto de entrada de tu aplicación React
   entry: './src/index.js',
 
   output: {
-    // Output directory for bundled files
+    // Directorio de salida para los archivos empaquetados
     path: path.resolve(__dirname, 'public'),
-    // Name of the output bundle file
+    // Nombre del archivo de salida
     filename: 'bundle.js',
   },
 
   module: {
     rules: [
       {
-        // Rule to process JavaScript and JSX files
+        // Regla para procesar archivos JavaScript y JSX
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -22,38 +25,33 @@ module.exports = {
         },
       },
       {
-        // Rule to process CSS files
+        // Regla para procesar archivos CSS
         test: /\.css$/,
-        use: [
-          'style-loader', // Injects styles into the DOM
-          'css-loader',   // Interprets @import and url()
-        ],
+        use: ['style-loader', 'css-loader'],
       },
-      // You might need more rules here for other file types like images, fonts, etc.
-      // Example for images:
-      // {
-      //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
-      //   type: 'asset/resource',
-      // },
     ],
   },
 
+  // Añadimos la sección de plugins
+  plugins: [
+    // DefinePlugin permite crear constantes globales que se pueden configurar en tiempo de compilación.
+    new webpack.DefinePlugin({
+      // Reemplazamos 'process.env' en el código del cliente con un objeto
+      // que contiene las variables de entorno.
+      'process.env': JSON.stringify(process.env)
+    })
+  ],
+
   resolve: {
-    // Automatically resolve these file extensions
+    // Resuelve automáticamente estas extensiones de archivo
     extensions: ['.js', '.jsx'],
   },
 
   devServer: {
-    // Serve static files from the 'public' directory
     static: path.join(__dirname, 'public'),
-    // Port for the development server
     port: 3000,
-    // Enable Hot Module Replacement (HMR)
     hot: true,
-    // Fallback to index.html for client-side routing
     historyApiFallback: true,
-    // Disable host check to allow access from anywhere in dev (useful for some environments)
-    // This was already in your config, kept it here.
     allowedHosts: 'all',
   },
 };
